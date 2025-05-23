@@ -3,20 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "frontend" // O la ruta que Nx/Turborepo espere, ej: "packages/frontend"
-    // El backend no será un workspace de npm/yarn directamente,
-    // pero puedes tener scripts para gestionarlo.
+    "frontend"
   ],
   "scripts": {
-    "start:frontend": "npm run start --workspace=frontend", // O el comando específico de Nx/Turborepo
-    "start:backend": "cd backend && python manage.py runserver", // Ejemplo simple
-    "start": "npm-run-all --parallel start:frontend start:backend", // Necesitarías npm-run-all
+    "start:frontend": "npm run start --workspace=frontend", 
+    "start:backend": "cd backend && python manage.py runserver", 
+    "start": "npm-run-all --parallel start:frontend start:backend", 
     "build:frontend": "npm run build --workspace=frontend"
-    // ... otros scripts para tests, linting, etc.
   },
   "devDependencies": {
-    "nx": "latest", // o turborepo, lerna
-    "npm-run-all": "^4.1.5" // Para ejecutar scripts en paralelo
-    // ... otras dependencias de desarrollo a nivel de monorepo
+    "nx": "latest", 
+    "npm-run-all": "^4.1.5" 
   }
 }
