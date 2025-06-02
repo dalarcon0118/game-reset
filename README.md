@@ -59,7 +59,15 @@ La información del frontend es limitada, pero la estructura de carpetas sugiere
 
 ### Backend
 
-Consulte el archivo <mcfile name="README.md" path="/Users/davidmartinez/develop/game-reset/demos/Game-Reset/backend/README.md"></mcfile> para obtener instrucciones detalladas sobre la configuración y ejecución del backend.
+Consulte el archivo README.md en el directorio backend para obtener instrucciones detalladas sobre la configuración y ejecución del backend.
+
+Para ejecutar migraciones en el contenedor Docker:
+
+1. Ejecutar migraciones directamente:
+```bash
+docker-compose -f docker-compose.dev.yml exec web python manage.py makemigrations
+docker-compose -f docker-compose.dev.yml exec web python manage.py migrate
+```
 
 ### Frontend
 

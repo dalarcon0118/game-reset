@@ -31,6 +31,9 @@ services:
       - RABBITMQ_PASSWORD=guest
       - PUBLIC_SCHEMA_NAME=public
       - ALLOWED_HOSTS=localhost,127.0.0.1
+      - DJANGO_ADMIN_USER=admin
+      - DJANGO_ADMIN_EMAIL=admin@example.com
+      - DJANGO_ADMIN_PASSWORD=admin
 
   db:
     image: postgres:15
@@ -41,7 +44,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
 
   redis:
     image: redis:6
